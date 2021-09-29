@@ -1,0 +1,30 @@
+{
+  "name": "remoteup-be",
+  "version": "1.0.0",
+  "description": "RemoteUP backend code",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhupen13au/remoteup-be.git"
+  },
+  "keywords": [
+    "RemoteUP"
+  ],
+  "author": "bhupendra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhupen13au/remoteup-be/issues"
+  },
+  "homepage": "https://github.com/bhupen13au/remoteup-be#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
