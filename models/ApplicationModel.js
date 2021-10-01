@@ -10,7 +10,15 @@ const ApplicationSchema = mongoose.Schema({
     ref: 'Job',
   },
   resume: {
-    type: String,
+    type: String, // path
+    required: true,
+  },
+  dateApplied: {
+    type: Date,
+    default: Date.now,
+  },
+  applicationStatus: {
+    type: String, // applied, rejected, l1, l2, hr, selected
     required: true,
   },
 });

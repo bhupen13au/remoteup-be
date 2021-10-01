@@ -42,18 +42,18 @@ const JobSchema = mongoose.Schema({
     type: String,
   },
   companyLogo: {
-    type: String,
+    type: String, // path
     required: true,
   },
   companyBillingEmail: {
-    type: String,
+    type: String, // email-id
     required: true,
   },
   companyAbout: {
     type: String,
   },
   plan: {
-    type: String,
+    type: String, // 1-month, 3-month, 6-month, year
     required: true,
   },
   dateOfPurchase: {
@@ -63,7 +63,20 @@ const JobSchema = mongoose.Schema({
   dateOfExpiry: {
     type: Date,
   },
+  createdBy: {
+    type: String,
+    required: true,
+  },
+  updatedBy: {
+    type: String,
+  },
+  createdTS: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedTS: {
+    type: Date,
+  },
 });
 
-// module.exports.JobSchema = JobSchema;
 module.exports = mongoose.model('Job', JobSchema);

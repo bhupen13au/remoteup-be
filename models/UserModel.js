@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-// const Job = require('./JobModel');
 
 const UserSchema = mongoose.Schema({
   userId: {
-    type: String,
+    type: String, // email-id
     required: true,
     unique: true,
   },
