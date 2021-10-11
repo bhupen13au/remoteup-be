@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const JobSchema = mongoose.Schema({
   active: {
     type: Boolean,
+    default: true,
   },
   position: {
     type: String,
@@ -13,7 +14,7 @@ const JobSchema = mongoose.Schema({
     required: true,
   },
   jobType: {
-    type: String,
+    type: String, // Full-Time/Part-Time
     required: true,
   },
   salary: {
@@ -23,10 +24,13 @@ const JobSchema = mongoose.Schema({
     type: String,
   },
   applyType: {
-    type: String,
+    type: String, // ATS/URL
     required: true,
   },
-  jobDessription: {
+  applyURL: {
+    type: String,
+  },
+  jobDescription: {
     type: String,
     required: true,
   },
@@ -70,13 +74,6 @@ const JobSchema = mongoose.Schema({
   updatedBy: {
     type: String,
   },
-  createdTS: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedTS: {
-    type: Date,
-  },
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Job', JobSchema);
