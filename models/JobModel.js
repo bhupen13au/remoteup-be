@@ -49,10 +49,6 @@ const JobSchema = mongoose.Schema({
     type: String, // path
     required: true,
   },
-  companyBillingEmail: {
-    type: String, // email-id
-    required: true,
-  },
   companyAbout: {
     type: String,
   },
@@ -74,6 +70,10 @@ const JobSchema = mongoose.Schema({
   updatedBy: {
     type: String,
   },
+  applications: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Application',
+  }],
 }, { timestamps: true });
 
 module.exports = mongoose.model('Job', JobSchema);
